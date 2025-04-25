@@ -1,5 +1,7 @@
 h1 {
-    font-family: coolvetica, "sans-serif";
+    /* font-family: coolvetica, "sans-serif"; */
+    font-family: "loos-normal", sans-serif;
+    /* font-family: "house-of-cards", serif; */
     font-weight: 700;
     font-style: normal;
     font-size: 4rem;
@@ -52,6 +54,11 @@ h1 {
 #cv-button {  
     margin-top: 10px;
     cursor: pointer;
+}
+
+img {
+    left: -5rem;
+    top: 50px;
 }
 
 /* html {
