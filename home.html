@@ -4,68 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="folio.js" defer></script>
+    <!--A bunch of fonts - clean up later-->
     <link rel="stylesheet" href="https://use.typekit.net/lqr7pun.css">
     <link rel="stylesheet" href="https://use.typekit.net/ekz8ebm.css">
     <link rel="stylesheet" href="https://use.typekit.net/lqr7pun.css">
     <link rel="stylesheet" href="https://use.typekit.net/lqr7pun.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <main>
-        <div class="nav-bar">
+        <!-- <div class="nav-bar">
             <div id="nav-button">About</div>
             <div id="nav-button">Projects</div>
             <div id="nav-button">Skills</div>
             <div id="nav-button">Work Experience</div>
             <div id="nav-button">Contact</div>
-        </div>
-        <section>
-            <div class="container">
-                <div class="head-container">
-                    <h1 id="intro">Hi, I'm Nidha Nureen.</h1>
+        </div> -->
+        <section class="wrapper">
+            <div class="desktop-container">
+                <div class="date-time">
+                    <p id="date"></p>
+                    <p id="time"></p>
                 </div>
-                <div id="cv-button">Download My CV Here</div>
-                <img src="a-red-spiderlily-flower-with-long-stems-on-a-white-background-vector.jpg">
-            </div>
-        </section>
- 
-        <section>
-            <div class="container">
-                <h1>About</h1>
-                <p>
-                    I am a uni student.
-                </p>
-            </div>
-        </section>
-       
-        <section>
-            <div class="container">
-                <h1>Projects</h1>
-            </div>
-        </section>
-        <div class="sticky-parent">
-            <div class="sticky">
-                <div class="scroll-section"></div>
-            </div>
-        </div>
-        <section>
-            <div class="container">
-                <h1>Skills</h1>
-            </div>
-        </section>
-        
-        <section>
-            <div class="container">
-                <h1>Work Experience</h1>
+                <img id="folio-desktop" src="assets/desktop.svg">
+                <div class="overlay-content">
+                    <h1 id="intro">Hi, I'm</h1>
+                    <h1 id="intro">Nidha Nureen.</h1>
+                    <div id="cv-button">Download My CV Here</div>
+                </div>
             </div>
         </section>
 
-        <section>
-            <div class="container">
-                <h1>Contact</h1>
-            </div>
-        </section>
+        
+        
     </main>
 </body>
 </html>
