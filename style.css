@@ -49,7 +49,7 @@ h1 {
 
 .overlay-content {
     position: absolute;
-    top: 42%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -59,7 +59,7 @@ h1 {
     position: absolute;
     top: 172px;
     right: 155px;
-    z-index: 10;
+    z-index: 1;
 }
 
 .date-time p {
@@ -76,11 +76,138 @@ h1 {
 
 #cv-button {  
     margin-top: 10px;
-    cursor: pointer;
     font-size: 16pt;
 }
 
+.secs-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
 
+.secs-container img {
+    width: 10dvw;
+    height: auto;
+    margin-bottom: 15px;
+}
 
+.secs-container p {
+    font-size: 1.5rem;
+    margin-left: 8px;
+}
 
+.abt-me-button, .skills-button, .projects-button, .contact-button, #cv-button {
+    cursor: pointer;
+}
 
+.abt-me-button:hover, .skills-button:hover, .projects-button:hover, .contact-button:hover, #cv-button:hover {
+    opacity: 65%;
+    transform: translateY(5px);
+    transition: 0.1s;
+}
+
+.abt-me-button:active, .skills-button:active, .projects-button:active, .contact-button:active {
+    transform: translateY(10px);
+}
+
+:root {
+    --pane-width: 50vw;
+    --pane-height: 70vh;
+}
+
+.pane {
+    box-sizing: border-box;
+    position: absolute;
+    width: var(--pane-width);
+    height: var(--pane-height);
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 30%;
+    z-index: 999;
+    border-radius: 14px;
+    background: #E8F5FF;
+    border: 5px solid #1D3446;
+    display: flex;
+    flex-direction: column;
+    padding-top: 35px;
+}
+
+.header {
+    height: 35px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    cursor: move;
+}
+
+.pane-line {
+    height: 5px;
+    background-color: #1D3446;
+    width: 100%;
+}
+
+.close-button {
+    position: absolute;
+    width: 2vw;
+    height: auto;
+    right: 25px;
+    top: 3px;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    opacity: 65%;
+}
+
+.close-button:active {
+    transform: translateY(1px);
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.content {
+    text-align: center;
+    margin-left: 24px;
+    margin-right: 24px;
+}
+
+.content p {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.corner-tl, .corner-tr, .corner-bl, .corner-br {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+}
+
+.corner-tl {
+    top: 0;
+    left: 0;
+    cursor: nwse-resize;
+}
+
+.corner-tr {
+    top: 0;
+    right: 0;
+    cursor: nesw-resize;
+}
+
+.corner-bl {
+    bottom: 0;
+    left: 0;
+    cursor: nesw-resize;
+}
+
+.corner-br {
+    bottom: 0;
+    right: 0;
+    cursor: nwse-resize;
+}

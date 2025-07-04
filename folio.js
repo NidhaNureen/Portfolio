@@ -1,4 +1,7 @@
 
+/**
+ * Updates the date and time on the main page
+ */
 function updateDateTime() {
     var dateElem = document.getElementById('date');
     var timeElem = document.getElementById('time');
