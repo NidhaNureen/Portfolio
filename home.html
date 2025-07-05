@@ -21,13 +21,6 @@
 <body>
 
     <main>
-        <!-- <div class="nav-bar">
-            <div id="nav-button">About</div>
-            <div id="nav-button">Projects</div>
-            <div id="nav-button">Skills</div>
-            <div id="nav-button">Work Experience</div>
-            <div id="nav-button">Contact</div>
-        </div> -->
         <section class="wrapper">
             <div class="desktop-container">
                 <div class="date-time">
@@ -40,29 +33,29 @@
                     <h1 id="intro">Nidha Nureen.</h1>
                     <div id="cv-button">Download My CV Here</div>
                     <div class="secs-container">
-                        <div class="abt-me-button">
+                        <div id="abt-me-button">
                             <img id="floppy" src="assets/Floppy_Disk_Icon.png">
                             <p>About Me</p>
                         </div>
-                       <div class="skills-button">
+                        <div id="skills-button">
                             <img src="assets/Wrench_Icon.png">
                             <p>Skills</p>
-                       </div>
-                       <div class="projects-button">
+                        </div>
+                        <div id="projects-button">
                             <img id="folder" src="assets/Folder_Icon.png">
                             <p>Projects</p>
-                       </div>
-                       <div class="contact-button">
+                        </div>
+                        <div id="contact-button">
                             <img id="email" src="assets/Email_Icon.png">
                             <p>Contact</p>
-                       </div>
+                        </div>
                     </div>
                 </div>
             
-                <div class="pane">
+                <section class="pane" id="about-me-window" style="display: none;">
                     <div class="header"></div>
                     <div class="pane-line"></div>
-                    <div class="close-button">
+                    <div class="close-button" data-window="about-me-window">
                         <img src="assets/close copy.png">
                     </div>
                     <div class="title">
@@ -75,7 +68,63 @@
                     <div class="corner-tr"></div>
                     <div class="corner-bl"></div>
                     <div class="corner-br"></div>
-                </div>
+                </section>
+
+                <section class="pane" id="skills-window" style="display: none;">
+                    <div class="header"></div>
+                    <div class="pane-line"></div>
+                    <div class="close-button" data-window="skills-window">
+                        <img src="assets/close copy.png">
+                    </div>
+                    <div class="title">
+                        <h1>Skills</h1>
+                    </div>
+                    <div class="content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vel est vitae leo malesuada placerat nec eu velit. Aenean interdum tortor eu porttitor tempus. Sed porta bibendum sapien sed ullamcorper. Phasellus accumsan justo non rutrum eleifend. Maecenas ac arcu urna. Etiam id risus in urna sodales bibendum ac vitae est. Fusce felis est, lacinia vitae laoreet ac, dictum at enim. Phasellus mauris est, sagittis et orci quis, scelerisque faucibus est. Quisque auctor interdum interdum.</p>
+                    </div>
+                    <div class="corner-tl"></div>
+                    <div class="corner-tr"></div>
+                    <div class="corner-bl"></div>
+                    <div class="corner-br"></div>
+                </section>
+
+                <section class="pane" id="projects-window" style="display: none;">
+                    <div class="header"></div>
+                    <div class="pane-line"></div>
+                    <div class="close-button" data-window="projects-window">
+                        <img src="assets/close copy.png">
+                    </div>
+                    <div class="title">
+                        <h1>Projects</h1>
+                    </div>
+                    <div class="content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vel est vitae leo malesuada placerat nec eu velit. Aenean interdum tortor eu porttitor tempus. Sed porta bibendum sapien sed ullamcorper. Phasellus accumsan justo non rutrum eleifend. Maecenas ac arcu urna. Etiam id risus in urna sodales bibendum ac vitae est. Fusce felis est, lacinia vitae laoreet ac, dictum at enim. Phasellus mauris est, sagittis et orci quis, scelerisque faucibus est. Quisque auctor interdum interdum.</p>
+                    </div>
+                    <div class="corner-tl"></div>
+                    <div class="corner-tr"></div>
+                    <div class="corner-bl"></div>
+                    <div class="corner-br"></div>
+                </section>
+
+                <section class="pane" id="contact-window" style="display: none;">
+                    <div class="header"></div>
+                    <div class="pane-line"></div>
+                    <div class="close-button" data-window="contact-window">
+                        <img src="assets/close copy.png">
+                    </div>
+                    <div class="title">
+                        <h1>Contact Info</h1>
+                    </div>
+                    <div class="content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vel est vitae leo malesuada placerat nec eu velit. Aenean interdum tortor eu porttitor tempus. Sed porta bibendum sapien sed ullamcorper. Phasellus accumsan justo non rutrum eleifend. Maecenas ac arcu urna. Etiam id risus in urna sodales bibendum ac vitae est. Fusce felis est, lacinia vitae laoreet ac, dictum at enim. Phasellus mauris est, sagittis et orci quis, scelerisque faucibus est. Quisque auctor interdum interdum.</p>
+                    </div>
+                    <div class="corner-tl"></div>
+                    <div class="corner-tr"></div>
+                    <div class="corner-bl"></div>
+                    <div class="corner-br"></div>
+                </section>
+
+
             </div>
         </section>
 

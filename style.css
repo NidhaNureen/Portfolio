@@ -97,17 +97,17 @@ h1 {
     margin-left: 8px;
 }
 
-.abt-me-button, .skills-button, .projects-button, .contact-button, #cv-button {
+#abt-me-button, #skills-button, #projects-button, #contact-button, #cv-button {
     cursor: pointer;
 }
 
-.abt-me-button:hover, .skills-button:hover, .projects-button:hover, .contact-button:hover, #cv-button:hover {
+#abt-me-button:hover, #skills-button:hover, #projects-button:hover, #contact-button:hover, #cv-button:hover {
     opacity: 65%;
     transform: translateY(5px);
     transition: 0.1s;
 }
 
-.abt-me-button:active, .skills-button:active, .projects-button:active, .contact-button:active {
+#abt-me-button:active, #skills-button:active, #projects-button:active, #contact-button:active {
     transform: translateY(10px);
 }
 
@@ -124,11 +124,10 @@ h1 {
     transform: translate(-50%, -50%);
     top: 50%;
     left: 30%;
-    z-index: 999;
+    z-index: 2;
     border-radius: 14px;
     background: #E8F5FF;
     border: 5px solid #1D3446;
-    display: flex;
     flex-direction: column;
     padding-top: 35px;
 }
