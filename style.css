@@ -138,6 +138,8 @@ h1 {
     position: absolute;
     top: 0;
     cursor: move;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .pane-line {
@@ -209,4 +211,8 @@ h1 {
     bottom: 0;
     right: 0;
     cursor: nwse-resize;
+}
+
+.pane.is-dragging .header {
+    background-color: #89ccff;
 }

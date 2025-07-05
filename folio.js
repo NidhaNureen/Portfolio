@@ -48,3 +48,41 @@ document.querySelectorAll(".close-button").forEach(button => {
         closeWindow(windowId);
     });
 });
+
+/**
+ * Moving the windows around
+ */
+
+const windows = document.querySelectorAll('.pane');
+
+windows.forEach((window) => {
+    const header = window.querySelector('.header');
+
+    header.addEventListener('mousedown', (event) => {
+        window.classList.add('is-dragging');
+
+        let l = window.offsetLeft;
+        let t = window.offsetTop;
+
+        let startX = event.pageX;
+        let startY = event.pageY;
+
+        const drag = (event) => {
+            event.preventDefault();
+
+            window.style.left = l + (event.pageX - startX) + 'px';
+            window.style.top = t + (event.pageY - startY) + 'px';
+        }
+
+        const mouseup = () => {
+            window.classList.remove('is-dragging');
+
+            document.removeEventListener('mousemove', drag);
+            document.removeEventListener('mouseup', mouseup);
+        }
+
+        document.addEventListener('mousemove', drag);
+        document.addEventListener('mouseup', mouseup);
+
+    });
+});
