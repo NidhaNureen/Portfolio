@@ -50,13 +50,18 @@ document.querySelectorAll(".close-button").forEach(button => {
 });
 
 /**
- * Moving the windows around
+ * Moving the windows around and resizing them
  */
 
 const windows = document.querySelectorAll('.pane');
 
 windows.forEach((window) => {
     const header = window.querySelector('.header');
+    const cornerTl = window.querySelector('.corner-tl');
+    const cornerTr = window.querySelector('.corner-tr');
+    const cornerBl = window.querySelector('.corner-bl');
+    const cornerBr = window.querySelector('.corner-br');
+    
 
     header.addEventListener('mousedown', (event) => {
         window.classList.add('is-dragging');
@@ -77,6 +82,106 @@ windows.forEach((window) => {
         const mouseup = () => {
             window.classList.remove('is-dragging');
 
+            document.removeEventListener('mousemove', drag);
+            document.removeEventListener('mouseup', mouseup);
+        }
+
+        document.addEventListener('mousemove', drag);
+        document.addEventListener('mouseup', mouseup);
+
+    });
+
+    cornerTl.addEventListener('mousedown', (event) => {
+
+        let w = window.clientWidth;
+        let h = window.clientHeight;
+
+        let startX = event.pageX;
+        let startY = event.pageY;
+
+        const drag = (event) => {
+            event.preventDefault();
+
+            window.style.width = w + (event.pageX - startX) + 'px';
+            window.style.height = h + (event.pageY - startY) + 'px';
+        }
+
+        const mouseup = () => {
+            document.removeEventListener('mousemove', drag);
+            document.removeEventListener('mouseup', mouseup);
+        }
+
+        document.addEventListener('mousemove', drag);
+        document.addEventListener('mouseup', mouseup);
+
+    });
+
+    cornerTr.addEventListener('mousedown', (event) => {
+
+        let w = window.clientWidth;
+        let h = window.clientHeight;
+
+        let startX = event.pageX;
+        let startY = event.pageY;
+
+        const drag = (event) => {
+            event.preventDefault();
+
+            window.style.width = w + (event.pageX - startX) + 'px';
+            window.style.height = h + (event.pageY - startY) + 'px';
+        }
+
+        const mouseup = () => {
+            document.removeEventListener('mousemove', drag);
+            document.removeEventListener('mouseup', mouseup);
+        }
+
+        document.addEventListener('mousemove', drag);
+        document.addEventListener('mouseup', mouseup);
+
+    });
+
+    cornerBl.addEventListener('mousedown', (event) => {
+
+        let w = window.clientWidth;
+        let h = window.clientHeight;
+
+        let startX = event.pageX;
+        let startY = event.pageY;
+
+        const drag = (event) => {
+            event.preventDefault();
+
+            window.style.width = w + (event.pageX - startX) + 'px';
+            window.style.height = h + (event.pageY - startY) + 'px';
+        }
+
+        const mouseup = () => {
+            document.removeEventListener('mousemove', drag);
+            document.removeEventListener('mouseup', mouseup);
+        }
+
+        document.addEventListener('mousemove', drag);
+        document.addEventListener('mouseup', mouseup);
+
+    });
+
+    cornerBr.addEventListener('mousedown', (event) => {
+
+        let w = window.clientWidth;
+        let h = window.clientHeight;
+
+        let startX = event.pageX;
+        let startY = event.pageY;
+
+        const drag = (event) => {
+            event.preventDefault();
+
+            window.style.width = w + (event.pageX - startX) + 'px';
+            window.style.height = h + (event.pageY - startY) + 'px';
+        }
+
+        const mouseup = () => {
             document.removeEventListener('mousemove', drag);
             document.removeEventListener('mouseup', mouseup);
         }
