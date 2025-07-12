@@ -22,11 +22,42 @@ updateDateTime()
 setInterval(updateDateTime, 1000)
 
 /**
+ * Clicking the window brings it to the front
+ */
+function increaseZIndex() {
+    const windows = document.querySelectorAll('.pane');
+    windows.forEach((window) => {
+        window.addEventListener('click', () => {
+            windows.forEach((w) => {
+                w.style.zIndex = 1;
+            });
+
+            window.style.zIndex = 2;
+        });
+    });
+}
+
+increaseZIndex();
+
+/**
  * Opens window when button is clicked
  */
 function openWindow(windowId) {
-    var window = document.getElementById(windowId);
-    window.style.display = "flex";
+    var wind = document.getElementById(windowId);
+    wind.style.display = "flex";
+
+    const allWindows = document.querySelectorAll('.pane');
+    let highestZ = 1;
+    allWindows.forEach((w) => {
+        if (w.style.display !== 'none') {
+            const z = parseInt(window.getComputedStyle(w).zIndex) || 0;
+            if (z > highestZ) {
+                highestZ = z;
+            }
+        }
+    });
+    
+    wind.style.zIndex = highestZ + 1;
 }
 
 document.getElementById("abt-me-button").addEventListener("click", () => openWindow('about-me-window'));
@@ -49,21 +80,19 @@ document.querySelectorAll(".close-button").forEach(button => {
     });
 });
 
+
+
 /**
  * Moving the windows around and resizing them
  */
-
 const windows = document.querySelectorAll('.pane');
 
 windows.forEach((window) => {
     const header = window.querySelector('.header');
-    const cornerTl = window.querySelector('.corner-tl');
-    const cornerTr = window.querySelector('.corner-tr');
-    const cornerBl = window.querySelector('.corner-bl');
-    const cornerBr = window.querySelector('.corner-br');
-    
 
     header.addEventListener('mousedown', (event) => {
+        event.preventDefault();
+
         window.classList.add('is-dragging');
 
         let l = window.offsetLeft;
@@ -82,112 +111,43 @@ windows.forEach((window) => {
         const mouseup = () => {
             window.classList.remove('is-dragging');
 
+            document.body.style.userSelect = '';    
+
             document.removeEventListener('mousemove', drag);
             document.removeEventListener('mouseup', mouseup);
         }
 
-        document.addEventListener('mousemove', drag);
-        document.addEventListener('mouseup', mouseup);
-
-    });
-
-    cornerTl.addEventListener('mousedown', (event) => {
-
-        let w = window.clientWidth;
-        let h = window.clientHeight;
-
-        let startX = event.pageX;
-        let startY = event.pageY;
-
-        const drag = (event) => {
-            event.preventDefault();
-
-            window.style.width = w + (event.pageX - startX) + 'px';
-            window.style.height = h + (event.pageY - startY) + 'px';
-        }
-
-        const mouseup = () => {
-            document.removeEventListener('mousemove', drag);
-            document.removeEventListener('mouseup', mouseup);
-        }
-
-        document.addEventListener('mousemove', drag);
-        document.addEventListener('mouseup', mouseup);
-
-    });
-
-    cornerTr.addEventListener('mousedown', (event) => {
-
-        let w = window.clientWidth;
-        let h = window.clientHeight;
-
-        let startX = event.pageX;
-        let startY = event.pageY;
-
-        const drag = (event) => {
-            event.preventDefault();
-
-            window.style.width = w + (event.pageX - startX) + 'px';
-            window.style.height = h + (event.pageY - startY) + 'px';
-        }
-
-        const mouseup = () => {
-            document.removeEventListener('mousemove', drag);
-            document.removeEventListener('mouseup', mouseup);
-        }
-
-        document.addEventListener('mousemove', drag);
-        document.addEventListener('mouseup', mouseup);
-
-    });
-
-    cornerBl.addEventListener('mousedown', (event) => {
-
-        let w = window.clientWidth;
-        let h = window.clientHeight;
-
-        let startX = event.pageX;
-        let startY = event.pageY;
-
-        const drag = (event) => {
-            event.preventDefault();
-
-            window.style.width = w + (event.pageX - startX) + 'px';
-            window.style.height = h + (event.pageY - startY) + 'px';
-        }
-
-        const mouseup = () => {
-            document.removeEventListener('mousemove', drag);
-            document.removeEventListener('mouseup', mouseup);
-        }
-
-        document.addEventListener('mousemove', drag);
-        document.addEventListener('mouseup', mouseup);
-
-    });
-
-    cornerBr.addEventListener('mousedown', (event) => {
-
-        let w = window.clientWidth;
-        let h = window.clientHeight;
-
-        let startX = event.pageX;
-        let startY = event.pageY;
-
-        const drag = (event) => {
-            event.preventDefault();
-
-            window.style.width = w + (event.pageX - startX) + 'px';
-            window.style.height = h + (event.pageY - startY) + 'px';
-        }
-
-        const mouseup = () => {
-            document.removeEventListener('mousemove', drag);
-            document.removeEventListener('mouseup', mouseup);
-        }
+        document.body.style.userSelect = 'none';
 
         document.addEventListener('mousemove', drag);
         document.addEventListener('mouseup', mouseup);
 
     });
 });
+
+/**
+ * CV download
+ */
+function downloadCV() {
+    const link = document.createElement('a');
+    link.href = 'files/csResume.pdf';
+    link.download = 'NidhaNureen_CV.pdf';
+    link.click();
+}
+
+/**
+ * Adding description to the windows
+ */
+function abtMeDescription() {
+
+    fetch('files/about.txt')
+    .then(repsonse => repsonse.text())
+    .then(data => {
+        document.getElementById('abt-me-description').innerText = data;
+    })
+    .catch(error => {
+        console.error('Error with loading file:', error);
+    });
+}
+
+abtMeDescription();
