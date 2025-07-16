@@ -1,4 +1,3 @@
-
 /**
  * Updates the date and time on the main page
  */
@@ -27,7 +26,7 @@ setInterval(updateDateTime, 1000)
 function increaseZIndex() {
     const windows = document.querySelectorAll('.pane');
     windows.forEach((window) => {
-        window.addEventListener('click', () => {
+        window.addEventListener('mousedown', () => {
             windows.forEach((w) => {
                 w.style.zIndex = 1;
             });
@@ -151,3 +150,6 @@ function abtMeDescription() {
 }
 
 abtMeDescription();
+
+let px = window.innerWidth * 0.03;
+console.log("25vw =", px, "px");

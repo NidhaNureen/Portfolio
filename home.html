@@ -23,31 +23,46 @@
     <main>
         <section class="wrapper">
             <div class="desktop-container">
-                <div class="date-time">
-                    <p id="date"></p>
-                    <p id="time"></p>
-                </div>
-                <img id="folio-desktop" src="assets/desktop.svg">
-                <div class="overlay-content">
-                    <h1 id="intro">Hi, I'm</h1>
-                    <h1 id="intro">Nidha Nureen.</h1>
-                    <button id="cv-button" onclick="downloadCV()">Download My CV Here</button>
-                    <div class="secs-container">
-                        <div id="abt-me-button">
-                            <img id="floppy" src="assets/Floppy_Disk_Icon.png">
-                            <p>About Me</p>
-                        </div>
-                        <div id="skills-button">
-                            <img src="assets/Wrench_Icon.png">
-                            <p>Skills</p>
-                        </div>
-                        <div id="projects-button">
-                            <img id="folder" src="assets/Folder_Icon.png">
-                            <p>Projects</p>
-                        </div>
-                        <div id="contact-button">
-                            <img id="email" src="assets/Email_Icon.png">
-                            <p>Contact</p>
+                <div class="desktop-pane" id="desktop">
+                    <div class="desktop-line"></div>
+                    <div class="cloud1">
+                        <img src="assets/cloud_sticker.svg">
+                    </div>
+
+                    <div class="cloud2">
+                        <img src="assets/cloud_sticker.svg">
+                    </div>
+
+                    <div class="date-time">
+                        <p id="date"></p>
+                        <p id="time"></p>
+                    </div>
+                    <div class="wifi">
+                        <img src="assets/wifi_symbol.png">
+                    </div>
+                    <div class="battery">
+                        <img src="assets/battery_symbol.png">
+                    </div>
+                    <div class="overlay-content">
+                        <h1 id="intro">Hi, I'm</h1>
+                        <h1 id="intro">Nidha Nureen.</h1>
+                        <button id="cv-button" onclick="downloadCV()">Download My CV Here</button>
+                        <div class="secs-container">
+                            <div id="abt-me-button">
+                                <img id="floppy" src="assets/Floppy_Disk_Icon.png">
+                                <p>About Me</p>
+                            </div>
+                            <div id="skills-button">
+                                <img src="assets/Wrench_Icon.png">
+                                <p>Skills</p>
+                            </div>
+                            <div id="projects-button">
+                                <img id="folder" src="assets/Folder_Icon.png">
+                                <p>Projects</p>
+                            </div>
+                            <div id="contact-button">
+                                <img id="email" src="assets/Email_Icon.png">
+                                <p>Contact</p>
                         </div>
                     </div>
                 </div>
@@ -64,10 +79,6 @@
                     <div class="content">
                         <p id="abt-me-description"></p>
                     </div>
-                    <div class="corner-tl"></div>
-                    <div class="corner-tr"></div>
-                    <div class="corner-bl"></div>
-                    <div class="corner-br"></div>
                 </section>
 
                 <section class="pane" id="skills-window" style="display: none;">
@@ -80,12 +91,35 @@
                         <h1>Skills</h1>
                     </div>
                     <div class="content">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vel est vitae leo malesuada placerat nec eu velit. Aenean interdum tortor eu porttitor tempus. Sed porta bibendum sapien sed ullamcorper. Phasellus accumsan justo non rutrum eleifend. Maecenas ac arcu urna. Etiam id risus in urna sodales bibendum ac vitae est. Fusce felis est, lacinia vitae laoreet ac, dictum at enim. Phasellus mauris est, sagittis et orci quis, scelerisque faucibus est. Quisque auctor interdum interdum.</p>
+                        <table class="skills-table">
+                            <tr class="skill-groups">
+                                <td>Programming Languages</td>
+                                <td>Web Dev</td>
+                                <td>Tools & Databases</td>
+                            </tr>
+                            
+                            <td>
+                                Python<br>
+                                JavaScript<br>
+                                Java<br>
+                                C#
+                            </td>
+                            <td>
+                                HTML<br>
+                                CSS<br>
+                                Flask<br>
+                                REST API's<br>
+                                ASP.NET
+                            </td>
+                            <td>
+                              
+                                SQL<br>
+                                Git<br>
+                                Github<br>
+                                Figma
+                            </td>
+                        </table>
                     </div>
-                    <div class="corner-tl"></div>
-                    <div class="corner-tr"></div>
-                    <div class="corner-bl"></div>
-                    <div class="corner-br"></div>
                 </section>
 
                 <section class="pane" id="projects-window" style="display: none;">
@@ -100,10 +134,6 @@
                     <div class="content">
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vel est vitae leo malesuada placerat nec eu velit. Aenean interdum tortor eu porttitor tempus. Sed porta bibendum sapien sed ullamcorper. Phasellus accumsan justo non rutrum eleifend. Maecenas ac arcu urna. Etiam id risus in urna sodales bibendum ac vitae est. Fusce felis est, lacinia vitae laoreet ac, dictum at enim. Phasellus mauris est, sagittis et orci quis, scelerisque faucibus est. Quisque auctor interdum interdum.</p>
                     </div>
-                    <div class="corner-tl"></div>
-                    <div class="corner-tr"></div>
-                    <div class="corner-bl"></div>
-                    <div class="corner-br"></div>
                 </section>
 
                 <section class="pane" id="contact-window" style="display: none;">
@@ -116,19 +146,25 @@
                         <h1>Contact Info</h1>
                     </div>
                     <div class="content">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vel est vitae leo malesuada placerat nec eu velit. Aenean interdum tortor eu porttitor tempus. Sed porta bibendum sapien sed ullamcorper. Phasellus accumsan justo non rutrum eleifend. Maecenas ac arcu urna. Etiam id risus in urna sodales bibendum ac vitae est. Fusce felis est, lacinia vitae laoreet ac, dictum at enim. Phasellus mauris est, sagittis et orci quis, scelerisque faucibus est. Quisque auctor interdum interdum.</p>
+                        <table class="contact-table">
+                            <td>
+                                <h3>Email</h3><br>
+                                <img src="assets/Email_Icon.png">
+                                nnurwork@gmail.com
+                            </td>
+                            <td>
+                                <h3>LinkedIn</h3><br>
+                                Nidha Nureen
+                            </td>
+                            <td>
+                                <h3>GitHub</h3><br>
+                                NidhaNureen
+                            </td>
+                        </table>
                     </div>
-                    <div class="corner-tl"></div>
-                    <div class="corner-tr"></div>
-                    <div class="corner-bl"></div>
-                    <div class="corner-br"></div>
                 </section>
-
-
             </div>
         </section>
-
-        
         
     </main>
 </body>

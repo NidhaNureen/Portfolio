@@ -9,9 +9,6 @@ html, body {
 }
 
 h1 {
-    /* font-family: coolvetica, "sans-serif"; */
-    /* font-family: "loos-normal", sans-serif; */
-    /* font-family: "house-of-cards", serif; */
     font-family: "Pixelify Sans" sans-serif;
     font-weight: 700;
     font-style: normal;
@@ -23,6 +20,50 @@ h1 {
     padding: 0;
     box-sizing: border-box;
     font-family: "Pixelify Sans", sans-serif;
+}
+
+.desktop-pane, .pane {
+    box-sizing: border-box;
+    position: absolute;
+    width: 70vw;
+    height: 80vh;
+    transform: translate(-50%, -50%);
+    top: 35%;
+    left: 23%;
+    z-index: 1;
+    border-radius: 14px;
+    background: #E8F5FF;
+    border: 5px solid #1D3446;
+    flex-direction: column;
+    padding-top: 35px;
+}
+
+.desktop-line, .pane-line {
+    height: 5px;
+    background-color: #1D3446;
+    width: 100%;
+}
+
+#desktop {
+    padding-top: 43px;
+}
+
+.cloud1 img {
+    position: absolute;
+    width: 367.5px;
+    height: auto;
+    top: -175px;
+    left: -130px;
+    z-index: 1;
+}
+
+.cloud2 img {
+    position: absolute;
+    width: 367.5px;
+    height: auto;
+    bottom: -150px;
+    right: -140px;
+    z-index: 10;
 }
 
 .wrapper {
@@ -40,13 +81,6 @@ h1 {
     max-width: 90vw; /* responsiveness */
 }
 
-.desktop-container img {
-  display: block;
-  width: 100%;
-  height: auto;
-  margin-left: 15px;
-}
-
 .overlay-content {
     position: absolute;
     top: 50%;
@@ -57,9 +91,8 @@ h1 {
 
 .date-time {
     position: absolute;
-    top: 172px;
-    right: 155px;
-    z-index: 1;
+    top: 8px;
+    right: 5px;
 }
 
 .date-time p {
@@ -68,6 +101,25 @@ h1 {
     display: inline-block;
     margin-right: 10px;
 }
+
+.wifi img {
+    position: absolute;
+    width: 42px;
+    height: auto;
+    top: 1px;
+    right: 280px;
+
+}
+
+.battery img {
+    position: absolute;
+    width: 42px;
+    height: auto;
+    top: -3px;
+    right: 225px;
+
+}
+
 
 #intro {
     font-size: 4.5rem;
@@ -100,6 +152,11 @@ h1 {
     margin-left: 8px;
 }
 
+#abt-me-button, #skills-button, #projects-button, #contact-button {
+    margin-right: 20px;
+    margin-right: 20px;
+}
+
 #abt-me-button, #skills-button, #projects-button, #contact-button, #cv-button {
     cursor: pointer;
     user-select: none;
@@ -121,25 +178,17 @@ h1 {
     
 }
 
+
 :root {
     --pane-width: 50vw;
     --pane-height: 60vh;
 }
 
 .pane {
-    box-sizing: border-box;
-    position: absolute;
     width: var(--pane-width);
     height: var(--pane-height);
-    transform: translate(-50%, -50%);
-    top: 35%;
-    left: 23%;
-    z-index: 1;
-    border-radius: 14px;
-    background: #E8F5FF;
-    border: 5px solid #1D3446;
-    flex-direction: column;
     padding-top: 35px;
+    overflow: hidden;
 }
 
 #skills-window {
@@ -167,12 +216,6 @@ h1 {
     border-top-right-radius: 10px;
 }
 
-.pane-line {
-    height: 5px;
-    background-color: #1D3446;
-    width: 100%;
-}
-
 .close-button {
     position: absolute;
     width: 2vw;
@@ -180,6 +223,12 @@ h1 {
     right: 25px;
     top: 3px;
     cursor: pointer;
+}
+
+.close-button img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .close-button:hover {
@@ -239,5 +288,56 @@ h1 {
 } */
 
 .pane.is-dragging .header {
-    background-color: #89ccff;
+    background-color: #8bccfd;
+}
+
+.skills-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 3px solid #1D3446;
+    table-layout: fixed;
+}
+
+.skills-table td {
+    border: 3px solid #1D3446;
+    padding: 0.8rem;
+    vertical-align: center;
+    width: 33%;
+    font-size: 17px;
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 500;
+    line-height: 1.5;
+    background-color: #d3ecff;
+
+}
+
+.skill-groups td {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1;
+    background-color: #9ed5ff;
+}
+
+.contact-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.contact-table h3 {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 20px;
+}
+
+.contact-table td {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 18px;
+    padding: 0.8rem;
+    vertical-align: center;
+    width: 33%;
+}
+
+.contact-table img {
+    width: 8vw;
+    vertical-align: top;
 }
