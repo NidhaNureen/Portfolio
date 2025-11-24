@@ -79,8 +79,6 @@ document.querySelectorAll(".close-button").forEach(button => {
     });
 });
 
-
-
 /**
  * Moving the windows around and resizing them
  */
@@ -153,3 +151,18 @@ abtMeDescription();
 
 let px = window.innerWidth * 0.03;
 console.log("25vw =", px, "px");
+
+
+function getProjectData() {
+    fetch('proj_data.json')
+    .then(response => response.json())
+    .then(data => {
+        const podcast = data[0];
+        console.log(podcast.Title);
+    })
+    .catch(error => {
+        console.error('a problem:', error)
+    });
+}
+
+getProjectData();

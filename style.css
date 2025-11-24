@@ -28,8 +28,8 @@ h1 {
     width: 70vw;
     height: 80vh;
     transform: translate(-50%, -50%);
-    top: 35%;
-    left: 23%;
+    top: 28%;
+    left: 18%;
     z-index: 1;
     border-radius: 14px;
     background: #E8F5FF;
@@ -192,18 +192,18 @@ h1 {
 }
 
 #skills-window {
-    top: 40%;
-    left: 26%;
+    top: 33%;
+    left: 22%;
 }
 
 #projects-window {
-    top: 45%;
-    left: 29%;
+    top: 39%;
+    left: 26%;
 }
 
 #contact-window {
-    top: 50%;
-    left: 32%;
+    top: 45%;
+    left: 30%;
 }
 
 .header {
@@ -220,7 +220,7 @@ h1 {
     position: absolute;
     width: 2vw;
     height: auto;
-    right: 25px;
+    right: 10px;
     top: 3px;
     cursor: pointer;
 }
@@ -341,3 +341,4 @@ h1 {
     width: 8vw;
     vertical-align: top;
 }
+

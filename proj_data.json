@@ -1,0 +1,23 @@
+[
+    {
+        "Title": "CARE - AI based Animal Reidentification",
+        "Description" : "This is the description",
+        "Role" : "Full-Stack Developer & UI/UX Lead",
+        "Technologies" : "React, TailwindCSS, Node.js, Electron, Flask",
+        "Images" : [""]
+    },
+
+    {
+        "Title": "Podcast Library Web Application",
+        "Description" : "This is the description",
+        "Technologies" : "HTML, CSS, Flask, SQLAlchemy ORM, SQLite",
+        "Images" : ["files/podapp_imgs/landing.png", "files/podapp_imgs/browse.png", "files/podapp_imgs/description.png", "files/podapp_imgs/addtoplaylist.png", "files/podapp_imgs/demoplaylist.png", "playlists.png"]
+    },
+
+    {
+        "Title": "NZSL Web Application for Beginners",
+        "Description" : "This is the description",
+        "Technologies" : "",
+        "Images" : [""]
+    }
+]
