@@ -83,11 +83,16 @@ document.querySelectorAll(".close-button").forEach(button => {
  * Moving the windows around and resizing them
  */
 const windows = document.querySelectorAll('.pane');
+const isDesktopViewport = () => window.matchMedia('(min-width: 1025px)').matches;
 
 windows.forEach((window) => {
     const header = window.querySelector('.header');
 
     header.addEventListener('mousedown', (event) => {
+        if (!isDesktopViewport()) {
+            return;
+        }
+
         event.preventDefault();
 
         window.classList.add('is-dragging');

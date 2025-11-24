@@ -44,6 +44,14 @@ h1 {
     width: 100%;
 }
 
+.pane-line {
+    position: absolute;
+    top: 35px;
+    left: 0;
+    width: 100%;
+}
+
+
 #desktop {
     padding-top: 43px;
 }
@@ -63,22 +71,22 @@ h1 {
     height: auto;
     bottom: -150px;
     right: -140px;
-    z-index: 10;
+    z-index: 1;
 }
 
 .wrapper {
     display: flex;
     justify-content: center; 
     align-items: center; 
-    height: 100vh;  /* fills the screen vertically */
-    width: 100vw;   /* fills the screen horizontally */
-    overflow: hidden; /* prevent scrolling */
+    height: 100vh; 
+    width: 100vw;   
+    overflow: hidden; 
 }
 
 .desktop-container {
     position: relative;
-    display: inline-block;  /* prevents stretching */
-    max-width: 90vw; /* responsiveness */
+    display: inline-block;  
+    max-width: 90vw; 
 }
 
 .overlay-content {
@@ -89,35 +97,34 @@ h1 {
     text-align: center;
 }
 
-.date-time {
+.status-bar {
     position: absolute;
-    top: 8px;
-    right: 5px;
+    top: -5px;
+    right: 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.date-time {
+    display: flex;
+    gap: 8px;
 }
 
 .date-time p {
     font-family: 'Pixelify Sans', sans-serif;
     font-size: 15pt;
     display: inline-block;
-    margin-right: 10px;
+}
+
+.wifi img,
+.battery img {
+    width: 42px;
+    height: auto;
 }
 
 .wifi img {
-    position: absolute;
-    width: 42px;
-    height: auto;
-    top: 1px;
-    right: 280px;
-
-}
-
-.battery img {
-    position: absolute;
-    width: 42px;
-    height: auto;
-    top: -3px;
-    right: 225px;
-
+    margin-top: 6px;
 }
 
 
@@ -218,7 +225,7 @@ h1 {
 
 .close-button {
     position: absolute;
-    width: 2vw;
+    width: 30px;
     height: auto;
     right: 10px;
     top: 3px;
@@ -342,3 +349,195 @@ h1 {
     vertical-align: top;
 }
 
+@media (max-width: 1024px) {
+    body, html {
+        height: auto;
+    }
+
+    .wrapper {
+        min-height: 100vh;
+        height: auto;
+        width: 100%;
+        padding: 32px 20px;
+        overflow: visible;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 32px;
+    }
+
+    .desktop-container {
+        max-width: 600px;
+        width: 100%;
+    }
+
+    .desktop-pane {
+        position: relative;
+        width: 100%;
+        height: auto;
+        top: auto;
+        left: auto;
+        transform: none;
+        margin: 0 auto 32px;
+        padding: 56px 24px 32px;
+    }
+
+    .pane {
+        position: fixed;
+        width: min(90vw, 550px);
+        max-height: calc(100vh - 80px);
+        height: auto;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        margin: 0;
+        padding: 90px 24px 32px;
+        z-index: 20;
+    }
+
+    .content {
+        overflow-y: auto;
+    }
+
+    #intro {
+        font-size: 3.5rem;
+        margin-top: 20px;
+    }
+
+    .cloud1 img, .cloud2 img {
+        width: 280px;
+    }
+
+    .cloud1 img {
+        top: -120px;
+    }
+
+    .cloud2 img {
+        bottom: -120px;
+    }
+
+    .header {
+        cursor: default;
+    }
+
+    .status-bar {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        justify-content: center;
+        width: calc(100% - 48px);
+        margin-bottom: 0;
+    }
+
+    .date-time {
+        justify-content: center;
+    }
+
+    .wifi img,
+    .battery img {
+        width: 38px;
+    }
+
+    .wifi img {
+        margin-top: 4px;
+    }
+
+    .overlay-content {
+        position: static;
+        transform: none;
+    }
+
+    .secs-container {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 18px;
+    }
+
+    .secs-container img {
+        width: 80px;
+    }
+
+    .close-button {
+        width: 28px;
+        top: 8px;
+        right: 10px;
+    }
+
+    .desktop-line {
+        position: relative;
+        width: calc(100% + 48px);
+        margin-left: -24px;
+    }
+
+    .pane-line {
+        position: absolute;
+        top: 40px;
+        left: 0;
+    }
+
+    .skills-table td,
+    .contact-table td {
+        font-size: 15px;
+    }
+
+    .contact-table img {
+        width: 60px;
+    }
+}
+
+@media (max-width: 845px) {
+    .cloud1 img, .cloud2 img {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2.6rem;
+    }
+
+    #intro {
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    #cv-button {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .secs-container p {
+        font-size: 1.1rem;
+    }
+
+    .pane .title h1 {
+        font-size: 2rem;
+    }
+
+    .content {
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+
+    .skills-table td,
+    .skills-table .skill-groups td {
+        padding: 0.5rem;
+        font-size: 0.95rem;
+        word-break: break-word;
+    }
+
+    .contact-table {
+        display: block;
+    }
+
+    .contact-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .contact-table img {
+        width: 48px;
+    }
+}
