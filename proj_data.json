@@ -1,23 +1,24 @@
 [
     {
         "Title": "CARE - AI based Animal Reidentification",
-        "Description" : "This is the description",
-        "Role" : "Full-Stack Developer & UI/UX Lead",
+        "Description": "Redesigned the UI/UX and implemented high-fidelity prototypes for a legacy Electron desktop application managing large datasets of camera trap images. Developed galleries with grid/list views, pagination, folder tree, multi-selection, and thumbnails, while resolving legacy bugs and optimizing performance for 35,000+ images. Integrated the frontend with the Node/Electron IPC pipeline, improved workflow clarity with HCI-driven design, and gained experience in React, Tailwind, Electron, debugging, and frontend testing with Cypress.",
         "Technologies" : "React, TailwindCSS, Node.js, Electron, Flask",
         "Images" : [""]
     },
 
     {
         "Title": "Podcast Library Web Application",
-        "Description" : "This is the description",
+        "Description" : "University Agile project: full-stack podcast web app allowing users to browse, search, and manage playlists. Built Flask backend with authentication, integrated SQL database via ORM, and implemented podcast browsing and playlist features. Led GitHub collaboration and supported teammates with debugging.",
+        "Role" : "Backend Developer, GitHub Collaboration Lead",
         "Technologies" : "HTML, CSS, Flask, SQLAlchemy ORM, SQLite",
         "Images" : ["files/podapp_imgs/landing.png", "files/podapp_imgs/browse.png", "files/podapp_imgs/description.png", "files/podapp_imgs/addtoplaylist.png", "files/podapp_imgs/demoplaylist.png", "playlists.png"]
     },
 
     {
         "Title": "NZSL Web Application for Beginners",
-        "Description" : "This is the description",
-        "Technologies" : "",
+        "Description" : "Web application for beginner learners of New Zealand Sign Language (NZSL). Built RESTful API in C#/.NET Core to provide structured access to signs and events. Developed front-end using JavaScript, HTML, and CSS with features like searchable sign dictionary, interactive event calendar, guestbook, and user registration/login with client-side session management. Focused on intuitive and accessible UI/UX.",
+        "Role" : "Full-Stack Developer",
+        "Technologies" : "JavaScript, C#, .NET, HTML, CSS",
         "Images" : [""]
     }
 ]
