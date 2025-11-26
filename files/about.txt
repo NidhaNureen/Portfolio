@@ -1,3 +1,7 @@
-I'm a final year Computer Science student at the University of Auckland with a strong interest in building practical, user-focused software. I’m most confident in Python, and I also have experience with C#, JavaScript, and full-stack web development. 
-I’m always looking to grow, take on new challenges, and contribute to teams that value collaboration and continuous learning. Outside of tech, I enjoy painting and reading as creative outlets, and I unwind with gaming — hobbies that keep me focused, curious, and creatively inspired in my work.
+I recently completed my Computer Science degree at the University of Auckland and I'm passionate about building practical, user-focused software. I'm most confident in Python and have hands-on experience with JavaScript, React.js, C#, and full-stack web development using Flask and Node.js.
+
+Recently, I led the UI/UX redesign and frontend development for an Electron-based animal re-identification desktop app, where I tackled complex challenges like optimizing performance for 250,000+ images and resolving critical legacy bugs. I've also worked with SQL databases in other projects, and gained valuable experience integrating APIs and collaborating in Agile teams—skills I'm eager to keep building on.
+
+I thrive in environments that value collaboration, continuous learning, and translating user needs into thoughtful design decisions. Outside of tech, I enjoy painting and reading as creative outlets, and I unwind with gaming—hobbies that keep me focused, curious, and creatively inspired in my work.
+
 
