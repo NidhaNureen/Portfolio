@@ -60,12 +60,19 @@ h1, p {
     padding-top: 43px;
 }
 
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-13px); } /* moves up */
+    100% { transform: translateY(0px); }
+}
+
 .cloud1 img, .cloud2 img {
     position: absolute;
     width: 367.5px;
     height: auto;
     z-index: 1;
     pointer-events: none;
+    animation: float 8s ease-in-out infinite; /* duration: 10s, loops infinitely */
 }
 
 .cloud1 img {
@@ -214,6 +221,8 @@ h1, p {
 #projects-window {
     top: 39%;
     left: 26%;
+    width: 75vw;
+    height: 85vh;
 }
 
 #contact-window {
@@ -354,6 +363,59 @@ h1, p {
 
 .user {
     margin-top: 10px;
+}
+
+.project-title {
+    font-family: "IBM Plex Mono", monospace;
+
+}
+
+.gallery-container {
+    padding: 0.2rem;
+}
+
+.gallery-wrapper {
+    position: relative;
+    max-width: 30rem;
+    margin: 0 auto;
+}
+
+.gallery {
+    display: flex;
+    aspect-ratio: 16/9;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    border-radius: 0.5rem;
+}
+
+.gallery img {
+    flex: 1 0 100%;
+    scroll-snap-align: start;
+    object-fit: contain;
+}
+
+.gallery-nav {
+    display: flex;
+    column-gap: 1rem;
+    position: absolute;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.gallery-nav a {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0.75;
+    transition: opacity ease 250ms;
+}
+
+.gallery-nav a:hover{
+    opacity: 1;
 }
  
 @media (max-width: 1100px) {

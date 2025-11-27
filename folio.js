@@ -1,3 +1,4 @@
+
 /**
  * Updates the date and time on the main page
  */
@@ -158,16 +159,150 @@ let px = window.innerWidth * 0.03;
 console.log("25vw =", px, "px");
 
 
-function getProjectData() {
-    fetch('proj_data.json')
-    .then(response => response.json())
+/**
+ * Grabbing project data and adding it to the html doc w/ pagination
+ */
+
+const pageSize = 1;
+let currPage = 1;
+let projectData = [];
+
+const projectsContainer = document.querySelector('#projects-window .content');
+
+const pager = document.createElement('div');
+pager.className = 'projects-pager';
+
+fetch('proj_data.json')
+    .then(r => r.json())
     .then(data => {
-        const podcast = data[0];
-        console.log(podcast.Title);
+        projectData = data;
+        renderProjectPage(currPage);
+        renderPager();
     })
-    .catch(error => {
-        console.error('a problem:', error)
+    .catch(err => console.error('Failed to load project pages:', err));
+
+// Render a page of projects 
+function renderProjectPage(page) {
+    // Clear curr content
+    projectsContainer.innerHTML = '';
+
+    const start = (page - 1) * pageSize;
+    const end = start + pageSize;
+    const pageItems = projectData.slice(start, end);
+
+    pageItems.forEach(project => {
+        const card = document.createElement('div');
+        card.classList.add('project-card');
+
+        const title = document.createElement('h3');
+        title.classList.add("project-title")
+        title.textContent = project.Title;
+        card.appendChild(title);
+        
+        if (project.Role) {
+            const role = document.createElement('p');
+            role.classList.add("project-role");
+            role.innerHTML = `Role: ${project.Role}`;
+            card.appendChild(role);
+        }
+
+        if (project.Images && project.Images.length > 0) {
+            const galleryCont = document.createElement('div')
+            galleryCont.classList.add('gallery-container')
+
+            const galleryWrapper = document.createElement('div')
+            galleryWrapper.classList.add('gallery-wrapper')
+
+            const gallery = document.createElement('div');
+            gallery.classList.add('gallery');
+
+            const galleryNav = document.createElement('div');
+            galleryNav.classList.add("gallery-nav");
+            
+            let imgCounter = 1;
+
+            project.Images.forEach(imgSrc => {
+                const img = document.createElement('img');
+                img.src = imgSrc;
+                img.alt = project.Title;
+                img.id = `${project.Title}-img-${imgCounter}`
+
+                img.classList.add('project-image');
+                gallery.appendChild(img);
+
+                const link = document.createElement('a');
+                link.href = `#${img.id}`;
+                galleryNav.appendChild(link);
+
+                imgCounter++;
+            });
+
+            galleryWrapper.appendChild(gallery);
+            galleryWrapper.appendChild(galleryNav);
+            galleryCont.appendChild(galleryWrapper);
+            card.appendChild(galleryCont);
+        }
+
+        if (project.Demo) {
+            const demoLink = document.createElement('a');
+            demoLink.classList.add("project-demo");
+            demoLink.textContent = "View demo"
+            demoLink.href = project.Demo;
+            card.appendChild(demoLink);
+        }
+
+        const desc = document.createElement('p');
+        desc.innerHTML = `Description: ${project.Description}`;
+        card.appendChild(desc);
+
+        const tech = document.createElement('p');
+        tech.innerHTML = `Technologies: ${project.Technologies}`;
+        card.appendChild(tech);
+
+        projectsContainer.appendChild(card);
     });
+
+    if (!projectsContainer.contains(pager)) {
+        projectsContainer.appendChild(pager);
+    }
+
+    projectsContainer.scrollTop = 0;
+
 }
 
-getProjectData();
+// Build pager UI 
+function renderPager() {
+    pager.innerHTML = '';
+
+    const totalPages = projectData.length;
+
+    // prev button
+    const prevBtn = document.createElement('button');
+    prevBtn.textContent = 'Prev';
+    prevBtn.className = 'pager-button';
+    prevBtn.disabled = currPage === 1;
+    prevBtn.addEventListener('click', () => {
+        if (currPage > 1) {
+            currPage--;
+            renderProjectPage(currPage);
+            renderPager();
+        }
+    });
+
+    pager.appendChild(prevBtn)
+
+    // next button
+    const nextBtn = document.createElement('button');
+    nextBtn.textContent = 'Next'
+    nextBtn.className = 'pager-button';
+    nextBtn.disabled = currPage === totalPages;
+    nextBtn.addEventListener('click', () => {
+        if (currPage < totalPages) {
+            currPage++;
+            renderProjectPage(currPage);
+            renderPager();
+        }
+    });
+
+    pager.appendChild(nextBtn)
+}
