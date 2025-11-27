@@ -1,19 +1,19 @@
 [
     {
         "Title": "CARE - AI based Animal Reidentification Desktop Application (2025)",
-        "Description": "Redesigned the UI/UX and implemented high-fidelity prototypes for a legacy Electron desktop application managing large datasets of camera trap images. Developed galleries with grid/list views, pagination, folder tree, multi-selection, and thumbnails, while resolving legacy bugs and optimizing performance for 35,000+ images. Integrated the frontend with the Node/Electron IPC pipeline, improved workflow clarity with HCI-driven design, and gained experience in React, Tailwind, Electron, debugging, and frontend testing with Cypress.",
+        "Description": "Redesigned the UI/UX and built high-fidelity prototypes for a legacy Electron desktop app managing 200,000+ camera trap images. Developed galleries with grid/list views, pagination, folder tree, multi-selection, and thumbnails, while optimizing performance and resolving legacy bugs. Leveraged existing AI-based animal detection and reidentification, integrated the frontend with Node/Electron IPC, and applied HCI-driven design.",
         "Role": "Full-Stack Developer & UI/UX Lead",
         "Technologies" : "React, TailwindCSS, Node.js, Electron, Flask",
-        "Images" : ["files/CARE_imgs/tutorial.png", "files/CARE_imgs/darkhome.png", "files/CARE_imgs/home.png", "files/CARE_imgs/about.png", "files/CARE_imgs/user_guide.png", "files/CARE_imgs/upload.png", "files/CARE_imgs/img_gall_list.png", "files/CARE_imgs/img_gall.png", "files/CARE_imgs/detect_gall.png", "files/CARE_imgs/reid_gall.png", "files/CARE_imgs/settings.png"],
+        "Images" : ["files/CARE_imgs/poster.png", "files/CARE_imgs/tutorial.png", "files/CARE_imgs/darkhome.png", "files/CARE_imgs/home.png", "files/CARE_imgs/about.png", "files/CARE_imgs/user_guide.png", "files/CARE_imgs/upload.png", "files/CARE_imgs/img_gall_list.png", "files/CARE_imgs/img_gall.png", "files/CARE_imgs/detect_gall.png", "files/CARE_imgs/reid_gall.png", "files/CARE_imgs/settings.png"],
         "Demo" : "https://youtu.be/usBty4LdPzk"
     },
 
     {
         "Title": "Podcast Library Web Application (2024)",
-        "Description" : "University Agile project: full-stack podcast web app allowing users to browse, search, and manage playlists. Built Flask backend with authentication, integrated SQL database via ORM, and implemented podcast browsing and playlist features. Led GitHub collaboration and supported teammates with debugging.",
+        "Description" : "University Agile project. A full-stack podcast web app allowing users to browse, search, and manage playlists. Built Flask backend with authentication, integrated SQL database via ORM, and implemented podcast browsing and playlist features. Led GitHub collaboration and supported teammates with debugging.",
         "Role" : "Full-Stack Developer",
         "Technologies" : "HTML, CSS, Flask, SQLAlchemy ORM, SQLite",
-        "Images" : ["files/podapp_imgs/landing.png", "files/podapp_imgs/browse.png", "files/podapp_imgs/description.png", "files/podapp_imgs/addtoplaylist.png", "files/podapp_imgs/playlists.png", "files/podapp_imgs/demoplaylist.png"]
+        "Images" : ["files/podapp_imgs/landing.png", "files/podapp_imgs/login.png", "files/podapp_imgs/register.png", "files/podapp_imgs/browse.png", "files/podapp_imgs/description.png", "files/podapp_imgs/addtoplaylist.png", "files/podapp_imgs/playlists.png", "files/podapp_imgs/demoplaylist.png"]
     },
 
     {

@@ -158,6 +158,25 @@ abtMeDescription();
 let px = window.innerWidth * 0.03;
 console.log("25vw =", px, "px");
 
+/** 
+ * Allow for full screen of images
+ */
+
+const lightbox = document.createElement('div');
+lightbox.classList.add('lightbox-overlay');
+const lightboxImg = document.createElement('img');
+lightbox.appendChild(lightboxImg);
+
+document.body.append(lightbox);
+
+lightbox.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+})
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+        lightbox.classList.remove('active');
+    }
+})
 
 /**
  * Grabbing project data and adding it to the html doc w/ pagination
@@ -202,7 +221,7 @@ function renderProjectPage(page) {
         if (project.Role) {
             const role = document.createElement('p');
             role.classList.add("project-role");
-            role.innerHTML = `Role: ${project.Role}`;
+            role.innerHTML = `<strong>Role:</strong> ${project.Role}`;
             card.appendChild(role);
         }
 
@@ -228,6 +247,12 @@ function renderProjectPage(page) {
                 img.id = `${project.Title}-img-${imgCounter}`
 
                 img.classList.add('project-image');
+
+                img.addEventListener('click', () => {
+                    lightboxImg.src = img.src;
+                    lightbox.classList.add('active');
+                })
+
                 gallery.appendChild(img);
 
                 const link = document.createElement('a');
@@ -246,17 +271,18 @@ function renderProjectPage(page) {
         if (project.Demo) {
             const demoLink = document.createElement('a');
             demoLink.classList.add("project-demo");
-            demoLink.textContent = "View demo"
+            demoLink.innerHTML = `<button class="demo-btn">View demo</button>`
             demoLink.href = project.Demo;
             card.appendChild(demoLink);
         }
 
         const desc = document.createElement('p');
-        desc.innerHTML = `Description: ${project.Description}`;
+        desc.className = 'project-description';
+        desc.innerHTML = `<strong>Description:</strong> ${project.Description}<br><br>`;
         card.appendChild(desc);
 
         const tech = document.createElement('p');
-        tech.innerHTML = `Technologies: ${project.Technologies}`;
+        tech.innerHTML = `<strong>Technologies:</strong> ${project.Technologies}<br><br>`;
         card.appendChild(tech);
 
         projectsContainer.appendChild(card);
@@ -306,3 +332,4 @@ function renderPager() {
 
     pager.appendChild(nextBtn)
 }
+
