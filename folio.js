@@ -165,19 +165,94 @@ console.log("25vw =", px, "px");
 const lightbox = document.createElement('div');
 lightbox.classList.add('lightbox-overlay');
 const lightboxImg = document.createElement('img');
-lightbox.appendChild(lightboxImg);
 
+const prevBtn = document.createElement('div');
+prevBtn.className = 'lightbox-prev';
+prevBtn.innerHTML = '&#10094;';
+
+const nextBtn = document.createElement('div');
+nextBtn.className = 'lightbox-next';
+nextBtn.innerHTML = '&#10095;';
+
+const closeBtn = document.createElement('div');
+closeBtn.className = 'lightbox-close';
+closeBtn.innerHTML = '&times;';
+
+lightbox.appendChild(lightboxImg);
+lightbox.appendChild(prevBtn);
+lightbox.appendChild(nextBtn);
+lightbox.appendChild(closeBtn);
 document.body.append(lightbox);
 
-lightbox.addEventListener('click', () => {
-    lightbox.classList.remove('active');
-})
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && lightbox.classList.contains('active')) {
-        lightbox.classList.remove('active');
+let currImgInd = 0;
+let currImgsList = [];
+
+function updateLightboxImg() {
+    if (currImgsList.length > 0) {
+        lightboxImg.src = currImgsList[currImgInd];
+
+        // prevBtn.style.display = currImgInd === 0 ? 'none' : 'block';
+        // nextBtn.style.display = currImgInd === currImgsList.length - 1 ? 'none' : 'block';
+    }
+}
+
+prevBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (currImgInd > 0) {
+        currImgInd--;
+        updateLightboxImg();
+    } else {
+        currImgInd = currImgsList.length - 1;
+        updateLightboxImg();
     }
 })
 
+nextBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (currImgInd < currImgsList.length - 1) {
+        currImgInd++;
+        updateLightboxImg();
+    } else {
+        currImgInd = 0;
+        updateLightboxImg();
+    }
+})
+
+closeBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    lightbox.classList.remove('active');
+})
+
+lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+        lightbox.classList.remove('active');
+    }
+})
+document.addEventListener('keydown', (e) => {
+    if (lightbox.classList.contains('active')) {
+        if (e.key === 'ArrowLeft') {
+            if (currImgInd > 0){
+                currImgInd--;
+                updateLightboxImg();
+            } else {
+                currImgInd = currImgsList.length - 1;
+                updateLightboxImg();
+            } 
+        } else if (e.key === 'ArrowRight') {
+            if (currImgInd < currImgsList.length - 1) {
+                currImgInd++;
+                updateLightboxImg();
+            } else {
+                currImgInd = 0;
+                updateLightboxImg();
+            }
+        } else if (e.key === 'Escape') {
+            lightbox.classList.remove('active');
+        }
+    }
+})
+
+ 
 /**
  * Grabbing project data and adding it to the html doc w/ pagination
  */
@@ -238,18 +313,19 @@ function renderProjectPage(page) {
             const galleryNav = document.createElement('div');
             galleryNav.classList.add("gallery-nav");
             
-            let imgCounter = 1;
 
-            project.Images.forEach(imgSrc => {
+            project.Images.forEach((imgSrc, index) => {
                 const img = document.createElement('img');
                 img.src = imgSrc;
                 img.alt = project.Title;
-                img.id = `${project.Title}-img-${imgCounter}`
+                img.id = `${project.Title}-img-${index}`
 
                 img.classList.add('project-image');
 
                 img.addEventListener('click', () => {
-                    lightboxImg.src = img.src;
+                    currImgsList = project.Images;
+                    currImgInd = index;
+                    updateLightboxImg();
                     lightbox.classList.add('active');
                 })
 
@@ -257,10 +333,45 @@ function renderProjectPage(page) {
 
                 const link = document.createElement('a');
                 link.href = `#${img.id}`;
-                galleryNav.appendChild(link);
 
-                imgCounter++;
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+
+                    // Remove active class from all dots in this gallery
+                    galleryNav.querySelectorAll('a').forEach(dot => dot.classList.remove('active'));
+                    
+                    // Add active class to clicked dot
+                    link.classList.add('active');
+
+                    img.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+                })
+
+                galleryNav.appendChild(link);
             });
+
+            // Observer to update nav dot on scroll
+            const observerOptions = {
+                root: gallery,
+                threshold: 0.5
+            }
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const visibleInd = Array.from(gallery.children).indexOf(entry.target);
+
+                        galleryNav.querySelectorAll('a').forEach((dot, i) => {
+                            if (i === visibleInd) {
+                                dot.classList.add('active');
+                            } else {
+                                dot.classList.remove('active');
+                            }
+                        })
+                    }
+                })
+            }, observerOptions);
+
+            gallery.querySelectorAll('img').forEach(img => observer.observe(img));
 
             galleryWrapper.appendChild(gallery);
             galleryWrapper.appendChild(galleryNav);
@@ -273,6 +384,8 @@ function renderProjectPage(page) {
             demoLink.classList.add("project-demo");
             demoLink.innerHTML = `<button class="demo-btn">View demo</button>`
             demoLink.href = project.Demo;
+            demoLink.target = "_blank";
+            demoLink.rel = "noopener noreferrer";
             card.appendChild(demoLink);
         }
 

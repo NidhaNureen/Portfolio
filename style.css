@@ -62,7 +62,7 @@ h1, p {
 
 @keyframes float {
     0% { transform: translateY(0px); }
-    50% { transform: translateY(-13px); } /* moves up */
+    50% { transform: translateY(-13px); } 
     100% { transform: translateY(0px); }
 }
 
@@ -72,7 +72,8 @@ h1, p {
     height: auto;
     z-index: 1;
     pointer-events: none;
-    animation: float 8s ease-in-out infinite; /* duration: 10s, loops infinitely */
+    animation: float 8s ease-in-out infinite; 
+    user-select: none;
 }
 
 .cloud1 img {
@@ -106,6 +107,13 @@ h1, p {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+}
+
+.content-wrapper {
+    position: relative;
+    height: calc(100% - 48px); /* Subtract status bar height */
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .status-bar {
@@ -142,14 +150,17 @@ h1, p {
 #intro {
     font-size: 4.5rem;
     color: #1D3446;
+    user-select: none;
 }
 
 #cv-button {  
-    margin-top: 10px;
-    font-size: 16pt;
+    margin-top: 20px;
+    font-size: 1.25rem;
     border: none;
-    background: transparent;
-
+    border-radius: 8px;
+    background: #5BB4FF;
+    padding: 0.5rem 0.75rem;
+    color: #E8F5FF;
 }
 
 .secs-container {
@@ -276,6 +287,7 @@ h1, p {
     text-align: center;
     margin-left: 24px;
     margin-right: 24px;
+    overflow-y: auto;
 }
 
 .content p {
@@ -373,6 +385,7 @@ h1, p {
 .gallery-container {
     margin-top: 0.5rem;
     padding: 0.2rem;
+    margin-bottom: 1.5rem;
 }
 
 .gallery-wrapper {
@@ -401,7 +414,7 @@ h1, p {
     display: flex;
     column-gap: 1rem;
     position: absolute;
-    bottom: 1.25rem;
+    bottom: -1rem;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1;
@@ -411,13 +424,18 @@ h1, p {
     width: 0.5rem;
     height: 0.5rem;
     border-radius: 50%;
-    background-color: #fff;
-    opacity: 0.75;
+    background-color: gray;
+    opacity: 0.65;
     transition: opacity ease 250ms;
 }
 
 .gallery-nav a:hover{
     opacity: 1;
+}
+
+.gallery-nav a.active {
+    background-color: #1D3446;
+    opacity: 0.8;
 }
 
 .lightbox-overlay {
@@ -443,6 +461,34 @@ h1, p {
   border-radius: 8px;
 }
 
+.lightbox-prev {
+    position: absolute;
+    left: 1rem;
+}
+
+.lightbox-next {
+    position: absolute;
+    right: 1rem;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+}
+
+.lightbox-prev, .lightbox-next, .lightbox-close {
+    cursor: pointer;
+    font-size: 2.5rem;
+    color: #E8F5FF;
+    opacity: 0.7;
+    user-select: none;
+}
+
+.lightbox-prev:hover, .lightbox-next:hover, .lightbox-close:hover {
+    opacity: 1;
+}
+ 
 .project-card,  
 .project-card * {
     font-family: "IBM Plex Mono", monospace !important;
@@ -483,7 +529,7 @@ h1, p {
 }
 
 .project-description {
-    margin-top: 0.3rem;
+    margin-top: 0.8rem;
 }
 
 .pager-button {
