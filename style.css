@@ -238,8 +238,10 @@ h1, p {
 #contact-window {
     top: 45%;
     left: 30%;
-    width: 50vw;
-    height: 55vh;
+}
+
+#contact-window .content {
+    margin-top: 5rem;
 }
 
 .header {
@@ -815,7 +817,7 @@ h1, p {
     }
 
     .title {
-        font-size: 1.75rem; /* Down from 3rem */
+        font-size: 1.75rem; 
         margin-top: 15px;
         margin-bottom: 8px;
     }
@@ -882,7 +884,6 @@ h1, p {
         word-break: break-word;
     }
 
-    /* Remove hover effects on mobile for better UX */
     .contact-table td:hover {
         opacity: 1;
         transform: none;
@@ -891,6 +892,10 @@ h1, p {
     .contact-table td:active {
         transform: translateY(3px);
         opacity: 0.8;
+    }
+
+    #contact-window .content {
+        margin-top: 0;
     }
 
     .gallery {
