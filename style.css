@@ -727,6 +727,38 @@ h1, p {
     .contact-table img {
         width: 60px;
     }
+
+    .gallery-container {
+        width: 100%;
+        margin-top: 1rem;
+        padding: 0;
+    }
+    
+    .gallery-wrapper {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .gallery {
+        width: 100%;
+        min-height: 200px; /* Ensures container has height */
+    }
+    
+    .gallery img {
+        width: 100%;
+        height: auto;
+        min-width: 100%; /* Forces each image to take full width */
+        object-fit: contain;
+    }
+    
+    .gallery-nav {
+        bottom: -1.5rem; /* Give more space from gallery */
+        position: relative; /* Change from absolute */
+        margin-top: 1rem;
+        transform: none;
+        left: auto;
+        justify-content: center;
+    }
 }
 
 @media (max-width: 845px) {
@@ -781,5 +813,14 @@ h1, p {
 
     .contact-table img {
         width: 48px;
+    }
+
+    .gallery {
+        min-height: 180px;
+    }
+    
+    .gallery-nav a {
+        width: 0.4rem;
+        height: 0.4rem;
     }
 }
