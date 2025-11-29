@@ -340,23 +340,42 @@ h1, p {
     font-size: 20px;
 }
 
+.contact-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    color: #1D3446;
+}
+
+.contact-table h3 {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 20px;
+    margin-bottom: 0.5rem;
+}
+
 .contact-table td {
     font-family: "IBM Plex Mono", monospace;
     font-size: 18px;
     padding: 0.8rem;
-    vertical-align: center;
+    vertical-align: top;
     width: 33%;
+    text-align: center;
 }
 
 .contact-table img {
     width: 7vw;
-    vertical-align: top;
+    max-width: 80px;
+    height: auto;
+    display: inline-block;
+    margin: 0 auto;
 }
 
 .contact-table a {
     text-decoration: none;
     font-family: "IBM Plex Mono", monospace;
     color: #1D3446;
+    display: block;
+    transition: opacity 0.1s, transform 0.1s;
 }
 
 .contact-table a:visited {
@@ -371,6 +390,11 @@ h1, p {
 
 .contact-table td:active {
     transform: translateY(10px);
+}
+
+.user {
+    margin-top: 10px;
+    font-size: 16px;
 }
 
 .user {
@@ -719,13 +743,26 @@ h1, p {
         left: 0;
     }
 
-    .skills-table td,
-    .contact-table td {
+    .skills-table td{
         font-size: 15px;
     }
 
+    .contact-table td {
+        font-size: 16px;
+        padding: 1rem 0.5rem;
+    }
+
     .contact-table img {
-        width: 60px;
+        width: 70px;
+        max-width: 70px;
+    }
+
+    .contact-table h3 {
+        font-size: 18px;
+    }
+
+    .user {
+        font-size: 14px;
     }
 
     .gallery-container {
@@ -802,17 +839,48 @@ h1, p {
         word-break: break-word;
     }
 
-    .contact-table {
-        display: block;
+    contact-table {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
     }
 
     .contact-table td {
         display: block;
         width: 100%;
+        padding: 1.25rem;
+        background-color: #d3ecff;
+        border: 2px solid #1D3446;
+        border-radius: 8px;
+        margin-bottom: 0;
     }
 
     .contact-table img {
-        width: 48px;
+        width: 56px;
+        max-width: 56px;
+        margin-bottom: 0.5rem;
+    }
+
+    .contact-table h3 {
+        font-size: 17px;
+        margin-bottom: 0.75rem;
+    }
+
+    .user {
+        font-size: 14px;
+        margin-top: 0.5rem;
+        word-break: break-word;
+    }
+
+    /* Remove hover effects on mobile for better UX */
+    .contact-table td:hover {
+        opacity: 1;
+        transform: none;
+    }
+
+    .contact-table td:active {
+        transform: translateY(3px);
+        opacity: 0.8;
     }
 
     .gallery {
