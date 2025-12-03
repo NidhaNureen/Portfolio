@@ -1,5 +1,5 @@
 html {
-  background-color: #5BB4FF;
+    background-color: #5BB4FF;
 }
 
 html, body {
@@ -9,7 +9,7 @@ html, body {
 }
 
 h1 {
-    font-family: "Pixelify Sans" sans-serif;
+    font-family: "Pixelify Sans", sans-serif;
     font-weight: 700;
     font-style: normal;
     font-size: 4rem;
@@ -42,6 +42,39 @@ h1, p {
     padding-top: 35px;
 }
 
+/* Content-based sizing for panes */
+.pane {
+    width: 55vw;
+    min-height: 400px;
+    height: auto;
+    max-height: 85vh;
+}
+
+#about-me-window {
+    min-height: 450px;
+}
+
+#skills-window {
+    top: 33%;
+    left: 22%;
+    min-height: 500px;
+}
+
+#projects-window {
+    top: 39%;
+    left: 26%;
+    width: 75vw;
+    min-height: 600px;
+    height: 85vh;
+}
+
+#contact-window {
+    top: 45%;
+    left: 30%;
+    min-height: 450px;
+    margin-top: 2rem;
+}
+
 .desktop-line, .pane-line {
     height: 5px;
     background-color: #1D3446;
@@ -54,7 +87,6 @@ h1, p {
     left: 0;
     width: 100%;
 }
-
 
 #desktop {
     padding-top: 43px;
@@ -111,7 +143,7 @@ h1, p {
 
 .content-wrapper {
     position: relative;
-    height: calc(100% - 48px); /* Subtract status bar height */
+    height: calc(100% - 48px);
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -145,7 +177,6 @@ h1, p {
 .wifi img {
     margin-top: 6px;
 }
-
 
 #intro {
     font-size: 4.5rem;
@@ -183,7 +214,6 @@ h1, p {
 
 #abt-me-button, #skills-button, #projects-button, #contact-button {
     margin-right: 20px;
-    margin-right: 20px;
 }
 
 #abt-me-button, #skills-button, #projects-button, #contact-button, #cv-button {
@@ -206,44 +236,6 @@ h1, p {
     transition: 0.1s;   
 }
 
-
-:root {
-    --pane-width: 55vw;
-    --pane-height: 65vh;
-}
-
-.pane {
-    width: var(--pane-width);
-    height: var(--pane-height);
-    padding-top: 35px;
-    overflow: hidden;
-}
-
-#about-me-window {
-    height: 71vh
-}
-
-#skills-window {
-    top: 33%;
-    left: 22%;
-}
-
-#projects-window {
-    top: 39%;
-    left: 26%;
-    width: 75vw;
-    height: 85vh;
-}
-
-#contact-window {
-    top: 45%;
-    left: 30%;
-}
-
-#contact-window .content {
-    margin-top: 5rem;
-}
-
 .header {
     height: 35px;
     width: 100%;
@@ -264,9 +256,9 @@ h1, p {
 }
 
 .close-button img {
-  width: 100%;
-  height: auto;
-  display: block;
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 .close-button:hover {
@@ -290,6 +282,7 @@ h1, p {
     margin-left: 24px;
     margin-right: 24px;
     overflow-y: auto;
+    max-height: calc(100% - 100px);
 }
 
 .content p {
@@ -313,14 +306,13 @@ h1, p {
 .skills-table td {
     border: 3px solid #1D3446;
     padding: 0.8rem;
-    vertical-align: center;
+    vertical-align: top;
     width: 33%;
     font-size: 17px;
     font-family: "IBM Plex Mono", monospace;
     font-weight: 500;
     line-height: 1.5;
     background-color: #d3ecff;
-
 }
 
 .skill-groups td {
@@ -334,32 +326,18 @@ h1, p {
     width: 100%;
     border-collapse: collapse;
     table-layout: fixed;
-    color: #1D3446;
 }
 
 .contact-table h3 {
     font-family: "IBM Plex Mono", monospace;
     font-size: 20px;
-}
-
-.contact-table {
-    width: 100%;
-    border-collapse: collapse;
-    table-layout: fixed;
-    color: #1D3446;
-}
-
-.contact-table h3 {
-    font-family: "IBM Plex Mono", monospace;
-    font-size: 20px;
-    margin-bottom: 0.5rem;
 }
 
 .contact-table td {
     font-family: "IBM Plex Mono", monospace;
     font-size: 18px;
     padding: 0.8rem;
-    vertical-align: top;
+    vertical-align: middle;
     width: 33%;
     text-align: center;
 }
@@ -369,7 +347,6 @@ h1, p {
     max-width: 80px;
     height: auto;
     display: inline-block;
-    margin: 0 auto;
 }
 
 .contact-table a {
@@ -384,7 +361,7 @@ h1, p {
     color: #1D3446;
 }
 
-.contact-table td:hover{
+.contact-table td:hover {
     opacity: 80%;
     transform: translateY(5px);
     transition: 0.1s;
@@ -399,13 +376,8 @@ h1, p {
     font-size: 16px;
 }
 
-.user {
-    margin-top: 10px;
-}
-
 .project-title {
     font-family: "IBM Plex Mono", monospace;
-
 }
 
 .gallery-container {
@@ -455,7 +427,7 @@ h1, p {
     transition: opacity ease 250ms;
 }
 
-.gallery-nav a:hover{
+.gallery-nav a:hover {
     opacity: 1;
 }
 
@@ -465,26 +437,28 @@ h1, p {
 }
 
 .lightbox-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.85);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.25s ease;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
 }
+
 .lightbox-overlay.active {
-  opacity: 1;
-  pointer-events: all;
+    opacity: 1;
+    pointer-events: all;
 }
+
 .lightbox-overlay img {
-  max-width: 95%;
-  max-height: 95%;
-  object-fit: contain;
-  border-radius: 8px;
+    max-width: 95%;
+    max-height: 95%;
+    object-fit: contain;
+    border-radius: 8px;
 }
 
 .lightbox-prev {
@@ -514,7 +488,7 @@ h1, p {
 .lightbox-prev:hover, .lightbox-next:hover, .lightbox-close:hover {
     opacity: 1;
 }
- 
+
 .project-card,  
 .project-card * {
     font-family: "IBM Plex Mono", monospace !important;
@@ -543,19 +517,19 @@ h1, p {
 }
 
 .projects-pager {
-  position: sticky;
-  bottom: 5px;           
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0.5rem;
-  z-index: 30;
-  background: #E8F5FF;
-  margin-top: 10px;
+    position: sticky;
+    bottom: 5px;           
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    z-index: 30;
+    background: #E8F5FF;
+    margin-top: 10px;
 }
 
 .project-description {
-    margin-top: 0.8rem;
+    margin-top: 1rem;
 }
 
 .pager-button {
@@ -587,7 +561,7 @@ h1, p {
 }
 
 .demo-btn {
-    margin-top: 0.2rem;
+    margin-top: 0.5rem;
     background: #1D3446;
     border: none;
     padding: 0.5rem 0.75rem;
@@ -606,7 +580,7 @@ h1, p {
     opacity: 90%;
     transition: 0.1s;
 }
- 
+
 @media (max-width: 1100px) {
     .cloud1 img, .cloud2 img {
         width: 310px;
@@ -655,11 +629,13 @@ h1, p {
         padding: 56px 24px 32px;
     }
 
+    /* Mobile panes - slightly less than screen width */
     .pane {
         position: fixed;
-        width: min(90vw, 550px);
-        max-height: calc(100vh - 80px);
-        height: auto;
+        width: calc(100vw - 32px) !important;
+        min-height: 300px;
+        height: auto !important;
+        max-height: calc(100vh - 64px);
         top: 50% !important;
         left: 50% !important;
         transform: translate(-50%, -50%) !important;
@@ -745,7 +721,7 @@ h1, p {
         left: 0;
     }
 
-    .skills-table td{
+    .skills-table td {
         font-size: 15px;
     }
 
@@ -780,20 +756,19 @@ h1, p {
     
     .gallery {
         width: 100%;
-        min-height: 200px; /* Ensures container has height */
+        min-height: 200px;
     }
     
     .gallery img {
         width: 100%;
         height: auto;
-        min-width: 100%; /* Forces each image to take full width */
+        min-width: 100%;
         object-fit: contain;
     }
     
     .gallery-nav {
-        bottom: -1.5rem; /* Give more space from gallery */
-        position: relative; /* Change from absolute */
-        margin-top: 1rem;
+        bottom: -0.7rem;
+        position: relative;
         transform: none;
         left: auto;
         justify-content: center;
@@ -811,7 +786,7 @@ h1, p {
         font-size: 2.6rem;
     }
 
-    .date-time p{
+    .date-time p {
         font-size: 1rem;
     }
 
@@ -855,7 +830,7 @@ h1, p {
         word-break: break-word;
     }
 
-    contact-table {
+    .contact-table {
         display: flex;
         flex-direction: column;
         gap: 1.5rem;
@@ -868,7 +843,6 @@ h1, p {
         background-color: #d3ecff;
         border: 2px solid #1D3446;
         border-radius: 8px;
-        margin-bottom: 0;
     }
 
     .contact-table img {
@@ -880,6 +854,14 @@ h1, p {
     .contact-table h3 {
         font-size: 17px;
         margin-bottom: 0.75rem;
+    }
+
+    .contact-table tbody,
+    .contact-table tr {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        width: 100%;
     }
 
     .user {
