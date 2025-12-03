@@ -399,6 +399,8 @@ h1, p {
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     border-radius: 0.5rem;
+    min-height: 0;                     /* allow flex parent sizing */
+    -webkit-overflow-scrolling: touch;
 }
 
 .gallery img {
@@ -755,15 +757,13 @@ h1, p {
     }
     
     .gallery {
-        width: 100%;
-        min-height: 200px;
+        height: 220px; /* adjust to taste */
+        aspect-ratio: auto;
+        position: relative;
     }
-    
     .gallery img {
-        width: 100%;
-        height: auto;
-        min-width: 100%;
-        object-fit: contain;
+        height: 100%;
+        width: auto;
     }
     
     .gallery-nav {
