@@ -394,17 +394,20 @@ h1, p {
 
 .gallery {
     display: flex;
-    aspect-ratio: 16/9;
+    width: 100%;
+    min-height: 300px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     border-radius: 0.5rem;
-    min-height: 0;                     /* allow flex parent sizing */
     -webkit-overflow-scrolling: touch;
 }
 
 .gallery img {
-    flex: 1 0 100%;
+    flex: 0 0 100%;
+    width: 100%;
+    height: auto;
+    max-height: 400px;
     scroll-snap-align: start;
     object-fit: contain;
     border-radius: 0.5rem;
