@@ -1,7 +1,7 @@
 [
     {
         "Title": "CARE - AI based Animal Reidentification Desktop Application (2025)",
-        "Description": "Redesigned the UI/UX and built high-fidelity prototypes for a legacy Electron desktop app managing 200,000+ camera trap images. Developed galleries with grid/list views, pagination, folder tree, multi-selection, and thumbnails, while optimizing performance and resolving legacy bugs. Leveraged existing AI-based animal detection and reidentification, integrated the frontend with Node/Electron IPC, and applied HCI-driven design.",
+        "Description": "A cross-platform desktop application helping wildlife researchers identify individual animals from camera trap footage. Redesigned and rebuilt the legacy interface to handle 200,000+ images efficiently, implementing advanced features like drag-and-drop organization, real-time filtering, and batch export capabilities. The app leverages AI models to detect and re-identify animals across thousands of images, making conservation research faster and more accurate.",
         "Role": "Full-Stack Developer & UI/UX Lead",
         "Technologies" : "React, TailwindCSS, Node.js, Electron, Flask",
         "Images" : ["files/CARE_imgs/poster.png", "files/CARE_imgs/tutorial.png", "files/CARE_imgs/darkhome.png", "files/CARE_imgs/home.png", "files/CARE_imgs/about.png", "files/CARE_imgs/user_guide.png", "files/CARE_imgs/upload.png", "files/CARE_imgs/img_gall_list.png", "files/CARE_imgs/img_gall.png", "files/CARE_imgs/detect_gall.png", "files/CARE_imgs/reid_gall.png", "files/CARE_imgs/settings.png"],
@@ -9,8 +9,8 @@
     },
 
     {
-        "Title": "Podcast Library Web Application (2024)",
-        "Description" : "University Agile project. A full-stack podcast web app allowing users to browse, search, and manage playlists. Built Flask backend with authentication, integrated SQL database via ORM, and implemented podcast browsing and playlist features. Led GitHub collaboration and supported teammates with debugging.",
+        "Title": "PodShelf - Podcast Library Web Application (2024)",
+        "Description" : "A full-stack podcast browsing platform enabling users to discover, search, and organize their favorite podcasts and episodes. Built with Flask backend and SQL database, featuring user authentication, dynamic search, and playlist management. Developed as part of an Agile team project using Scrumban methodology.",
         "Role" : "Full-Stack Developer",
         "Technologies" : "HTML, CSS, Flask, SQLAlchemy ORM, SQLite",
         "Images" : ["files/podapp_imgs/landing.png", "files/podapp_imgs/login.png", "files/podapp_imgs/register.png", "files/podapp_imgs/browse.png", "files/podapp_imgs/description.png", "files/podapp_imgs/addtoplaylist.png", "files/podapp_imgs/playlists.png", "files/podapp_imgs/demoplaylist.png"]
@@ -18,7 +18,7 @@
 
     {
         "Title": "NZSL Web Application for Beginners (2024)",
-        "Description" : "Web application for beginner learners of New Zealand Sign Language (NZSL). Built RESTful API in C#/.NET Core to provide structured access to signs and events. Developed front-end using JavaScript, HTML, and CSS with features like searchable sign dictionary, interactive event calendar, guestbook, and user registration/login with client-side session management. Focused on intuitive and accessible UI/UX.",
+        "Description" : "An interactive web application designed to help beginners learn New Zealand Sign Language (NZSL). Features a searchable sign dictionary with video demonstrations, community event calendar, and user-contributed guestbook. Built with a custom RESTful API backend in C# and dynamic frontend with vanilla JavaScript.",
         "Role" : "Full-Stack Developer",
         "Technologies" : "JavaScript, C#, .NET, HTML, CSS",
         "Images" : []

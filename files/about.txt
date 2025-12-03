@@ -1,7 +1,5 @@
-I recently completed my Computer Science degree at the University of Auckland and I'm passionate about building practical, user-focused software. I'm most confident in Python and have hands-on experience with JavaScript, React.js, C#, and full-stack web development using Flask and Node.js.
+I recently completed my Computer Science degree at the University of Auckland and build practical, user-focused software. I’m confident in Python, JavaScript, React.js, C#, and full-stack development with Flask and Node.js. I led the UI/UX redesign and worked as a full-stack developer on an Electron desktop app for wildlife researchers, optimizing performance to manage and analyze over 250,000 camera-trap images efficiently. Experienced with SQL databases, API integration, and Agile teamwork.
 
-Recently, I led the UI/UX redesign and frontend development for an Electron-based animal re-identification desktop app, where I tackled complex challenges like optimizing performance for 250,000+ images and resolving critical legacy bugs. I've also worked with SQL databases in other projects, and gained valuable experience integrating APIs and collaborating in Agile teams—skills I'm eager to keep building on.
-
-I thrive in environments that value collaboration, continuous learning, and translating user needs into thoughtful design decisions. Outside of tech, I enjoy painting and reading as creative outlets, and I unwind with gaming—hobbies that keep me focused, curious, and creatively inspired in my work.
+Outside of tech, I enjoy painting, reading, and gaming — hobbies that keep me curious, focused, and creatively inspired.
 
 
